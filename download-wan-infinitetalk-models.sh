@@ -76,9 +76,9 @@ download_model \
 
 # 3. Lora Model (704 MB)
 download_model \
-    "https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/Lightx2v/lightx2v_I2V_14B_480p_cfg_step_distill_rank64_bf16.safetensors?download=true" \
+    "https://huggingface.co/Kijai/WanVideo_comfy/resolve/main/Lightx2v/lightx2v_I2V_14B_480p_cfg_step_distill_rank256_bf16.safetensors?download=true" \
     "loras" \
-    "lightx2v_I2V_14B_480p_cfg_step_distill_rank64_bf16.safetensors" \
+    "lightx2v_I2V_14B_480p_cfg_step_distill_rank256_bf16.safetensors" \
     "Lora Model (704 MB)"
 
 # 4. VAE Model (243 MB)
