@@ -48,6 +48,17 @@ The script will:
 - Detect your NVIDIA GPU
 - Install PyTorch with CUDA 12.8 support (for CUDA 12.x) or CUDA 11.8 (for CUDA 11.x)
 - Install ComfyUI and all custom nodes
+
+### 3. Download Models (Optional)
+
+To use specific workflows like **Wan 2.1 InfiniteTalk**, download the required models:
+
+```bash
+cd ~/ComfyUIH200ARM
+./download-wan-infinitetalk-models.sh
+```
+
+This downloads ~25.5 GB of models needed for the Infinite Talk workflow. See [MODEL-DOWNLOAD-README.md](MODEL-DOWNLOAD-README.md) for details.
 - Set up the Python virtual environment
 - Configure everything automatically
 
