@@ -13,7 +13,7 @@ BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
 # Base directory (adjust if needed)
-BASE_DIR="${1:-ComfyUI-Easy-Install/ComfyUI/models}"
+BASE_DIR="${1:-${HOME}/ComfyUI-Easy-Install/ComfyUI-Easy-Install/ComfyUI/models}"
 
 echo -e "${BLUE}================================================${NC}"
 echo -e "${BLUE}  Wan 2.1 InfiniteTalk Model Download Script${NC}"
