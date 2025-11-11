@@ -21,7 +21,15 @@ This version automatically detects your NVIDIA GPU and installs PyTorch with the
 
 ## Quick Start
 
-### 1. Clone this repository
+### Option 1: One-Line Install (Easiest)
+
+```bash
+curl -sSL https://raw.githubusercontent.com/tourniquetrules/ComfyUIH200ARM/main/quick-install.sh | bash
+```
+
+### Option 2: Manual Install
+
+#### 1. Clone this repository
 
 ```bash
 cd ~
@@ -29,7 +37,7 @@ git clone https://github.com/tourniquetrules/ComfyUIH200ARM.git
 cd ComfyUIH200ARM
 ```
 
-### 2. Run the installer
+#### 2. Run the installer
 
 ```bash
 chmod +x ComfyUI-Easy-Install.sh
