@@ -132,6 +132,34 @@ download_model \
     "umt5-xxl-enc-bf16.safetensors" \
     "Text Encoder Model (11 GB)"
 
+# 8. FLUX CLIP_L Text Encoder (246 MB)
+download_model \
+    "https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/clip_l.safetensors" \
+    "text_encoders" \
+    "clip_l.safetensors" \
+    "FLUX CLIP_L Text Encoder (246 MB)"
+
+# 9. FLUX T5XXL FP16 Text Encoder (9.8 GB)
+download_model \
+    "https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/t5xxl_fp16.safetensors" \
+    "text_encoders" \
+    "t5xxl_fp16.safetensors" \
+    "FLUX T5XXL FP16 Text Encoder (9.8 GB)"
+
+# 10. Lumina Image 2.0 VAE (336 MB)
+download_model \
+    "https://huggingface.co/Comfy-Org/Lumina_Image_2.0_Repackaged/resolve/main/split_files/vae/ae.safetensors" \
+    "vae" \
+    "ae.safetensors" \
+    "Lumina Image 2.0 VAE (336 MB)"
+
+# 11. FLUX.1-Krea-dev FP8 Model (11.9 GB)
+download_model \
+    "https://huggingface.co/Comfy-Org/FLUX.1-Krea-dev_ComfyUI/resolve/main/split_files/diffusion_models/flux1-krea-dev_fp8_scaled.safetensors" \
+    "diffusion_models" \
+    "flux1-krea-dev_fp8_scaled.safetensors" \
+    "FLUX.1-Krea-dev FP8 Model (11.9 GB)"
+
 echo ""
 echo -e "${BLUE}================================================${NC}"
 echo -e "${GREEN}✓ All models downloaded successfully!${NC}"
@@ -144,7 +172,8 @@ echo -e "  • VAE: ${BASE_DIR}/vae/"
 echo -e "  • CLIP Vision: ${BASE_DIR}/clip_vision/"
 echo -e "  • Wav2Vec2: ${BASE_DIR}/wav2vec2/"
 echo -e "  • Text Encoder: ${BASE_DIR}/clip/"
+echo -e "  • FLUX Text Encoders: ${BASE_DIR}/text_encoders/"
 echo ""
-echo -e "${GREEN}Total downloaded: ~25.5 GB${NC}"
-echo -e "${YELLOW}You can now use the Infinite Talk Workflow in ComfyUI!${NC}"
+echo -e "${GREEN}Total downloaded: ~47.5 GB${NC}"
+echo -e "${YELLOW}You can now use the Infinite Talk and FLUX Workflows in ComfyUI!${NC}"
 echo ""
