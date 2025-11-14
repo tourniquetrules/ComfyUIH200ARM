@@ -217,6 +217,7 @@ get_node https://github.com/smthemex/ComfyUI_Sonic ComfyUI_Sonic
 get_node https://github.com/welltop-cn/ComfyUI-TeaCache teacache
 get_node https://github.com/kk8bit/KayTool kaytool
 get_node https://github.com/shiimizu/ComfyUI-TiledDiffusion ComfyUI-TiledDiffusion
+get_node https://github.com/Comfy-Org/comfyui-llm-toolkit comfyui-llm-toolkit
 
 # Check and install git-lfs for ComfyUI-LTXVideo
 if ! command -v git-lfs &> /dev/null; then
