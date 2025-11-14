@@ -1,0 +1,39 @@
+# ComfyUI Installation Directory
+ComfyUI-Easy-Install/ComfyUI/
+ComfyUI-Easy-Install/python_embeded/
+ComfyUI-Easy-Install/update/
+ComfyUI-Easy-Install/Add-Ons/
+ComfyUI-Easy-Install/run_nvidia_gpu.sh
+ComfyUI-Easy-Install/run_mac_mps.sh
+ComfyUI-Easy-Install/Update_*.sh
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.log
+.cache/
