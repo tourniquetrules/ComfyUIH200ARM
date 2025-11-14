@@ -15,11 +15,29 @@ NC='\033[0m' # No Color
 # Get the directory where this script is located
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-# Default ComfyUI installation path
-DEFAULT_COMFYUI_PATH="${HOME}/ComfyUI-Easy-Install/ComfyUI-Easy-Install"
-
-# Allow user to override the path
-COMFYUI_PATH="${1:-$DEFAULT_COMFYUI_PATH}"
+# Auto-detect ComfyUI installation path
+if [ -n "$1" ]; then
+    # Use provided path
+    COMFYUI_PATH="$1"
+elif [ -d "${SCRIPT_DIR}/ComfyUI-Easy-Install" ]; then
+    # Same directory as script (ComfyUIH200ARM/ComfyUI-Easy-Install)
+    COMFYUI_PATH="${SCRIPT_DIR}/ComfyUI-Easy-Install"
+elif [ -d "${HOME}/ComfyUI-Easy-Install/ComfyUI-Easy-Install" ]; then
+    # Standard path
+    COMFYUI_PATH="${HOME}/ComfyUI-Easy-Install/ComfyUI-Easy-Install"
+elif [ -d "${HOME}/ComfyUIH200ARM/ComfyUI-Easy-Install" ]; then
+    # ComfyUIH200ARM path
+    COMFYUI_PATH="${HOME}/ComfyUIH200ARM/ComfyUI-Easy-Install"
+else
+    echo -e "${RED}✗ Error: Could not find ComfyUI installation${NC}"
+    echo -e "${YELLOW}Searched in:${NC}"
+    echo -e "  ${SCRIPT_DIR}/ComfyUI-Easy-Install"
+    echo -e "  ${HOME}/ComfyUI-Easy-Install/ComfyUI-Easy-Install"
+    echo -e "  ${HOME}/ComfyUIH200ARM/ComfyUI-Easy-Install"
+    echo
+    echo "Usage: $0 [path_to_comfyui_installation]"
+    exit 1
+fi
 
 # Workflow source and destination
 WORKFLOW_FILE="Inifinte Talk Worfklow Wan 2.1 i2v 14B 480p.json"

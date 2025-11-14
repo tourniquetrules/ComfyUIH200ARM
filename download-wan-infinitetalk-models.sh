@@ -12,8 +12,31 @@ YELLOW='\033[1;33m'
 BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
-# Base directory (adjust if needed)
-BASE_DIR="${1:-${HOME}/ComfyUI-Easy-Install/ComfyUI-Easy-Install/ComfyUI/models}"
+# Auto-detect ComfyUI models directory
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+if [ -n "$1" ]; then
+    # Use provided path
+    BASE_DIR="$1"
+elif [ -d "${SCRIPT_DIR}/ComfyUI-Easy-Install/ComfyUI/models" ]; then
+    # Same directory as script (ComfyUIH200ARM/ComfyUI-Easy-Install/ComfyUI/models)
+    BASE_DIR="${SCRIPT_DIR}/ComfyUI-Easy-Install/ComfyUI/models"
+elif [ -d "${HOME}/ComfyUI-Easy-Install/ComfyUI-Easy-Install/ComfyUI/models" ]; then
+    # Standard path
+    BASE_DIR="${HOME}/ComfyUI-Easy-Install/ComfyUI-Easy-Install/ComfyUI/models"
+elif [ -d "${HOME}/ComfyUIH200ARM/ComfyUI-Easy-Install/ComfyUI/models" ]; then
+    # ComfyUIH200ARM path
+    BASE_DIR="${HOME}/ComfyUIH200ARM/ComfyUI-Easy-Install/ComfyUI/models"
+else
+    echo -e "${RED}Error: Could not find ComfyUI models directory${NC}"
+    echo -e "${YELLOW}Searched in:${NC}"
+    echo -e "  ${SCRIPT_DIR}/ComfyUI-Easy-Install/ComfyUI/models"
+    echo -e "  ${HOME}/ComfyUI-Easy-Install/ComfyUI-Easy-Install/ComfyUI/models"
+    echo -e "  ${HOME}/ComfyUIH200ARM/ComfyUI-Easy-Install/ComfyUI/models"
+    echo -e ""
+    echo -e "${YELLOW}Usage: $0 [path/to/ComfyUI/models]${NC}"
+    exit 1
+fi
 
 echo -e "${BLUE}================================================${NC}"
 echo -e "${BLUE}  Wan 2.1 InfiniteTalk Model Download Script${NC}"
@@ -49,14 +72,14 @@ download_model() {
     fi
 }
 
-# Check if base directory exists
-if [ ! -d "$(dirname "${BASE_DIR}")" ]; then
-    echo -e "${RED}Error: Base directory path does not exist: $(dirname "${BASE_DIR}")${NC}"
-    echo -e "${YELLOW}Please run this script from your ComfyUI installation directory, or provide the correct path.${NC}"
-    echo -e "${YELLOW}Usage: $0 [path/to/ComfyUI/models]${NC}"
-    exit 1
+# Verify base directory
+if [ ! -d "${BASE_DIR}" ]; then
+    echo -e "${YELLOW}Creating models directory: ${BASE_DIR}${NC}"
+    mkdir -p "${BASE_DIR}"
 fi
 
+echo -e "${GREEN}✓ Found ComfyUI models directory: ${BASE_DIR}${NC}"
+echo ""
 echo -e "${BLUE}Starting model downloads...${NC}"
 echo ""
 
