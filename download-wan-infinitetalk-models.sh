@@ -160,6 +160,95 @@ download_model \
     "flux1-krea-dev_fp8_scaled.safetensors" \
     "FLUX.1-Krea-dev FP8 Model (11.9 GB)"
 
+# 12. VibeVoice-Large Model Files (18.7 GB total)
+echo -e "${GREEN}Downloading VibeVoice-Large model files...${NC}"
+
+# Download config files first
+download_model \
+    "https://huggingface.co/aoi-ot/VibeVoice-Large/resolve/main/config.json" \
+    "vibevoice" \
+    "config.json" \
+    "VibeVoice Config"
+
+download_model \
+    "https://huggingface.co/aoi-ot/VibeVoice-Large/resolve/main/configuration.json" \
+    "vibevoice" \
+    "configuration.json" \
+    "VibeVoice Configuration"
+
+download_model \
+    "https://huggingface.co/aoi-ot/VibeVoice-Large/resolve/main/model.safetensors.index.json" \
+    "vibevoice" \
+    "model.safetensors.index.json" \
+    "VibeVoice Model Index"
+
+download_model \
+    "https://huggingface.co/aoi-ot/VibeVoice-Large/resolve/main/preprocessor_config.json" \
+    "vibevoice" \
+    "preprocessor_config.json" \
+    "VibeVoice Preprocessor Config"
+
+# Download all 10 model safetensors files
+download_model \
+    "https://huggingface.co/aoi-ot/VibeVoice-Large/resolve/main/model-00001-of-00010.safetensors" \
+    "vibevoice" \
+    "model-00001-of-00010.safetensors" \
+    "VibeVoice Model Part 1/10 (1.76 GB)"
+
+download_model \
+    "https://huggingface.co/aoi-ot/VibeVoice-Large/resolve/main/model-00002-of-00010.safetensors" \
+    "vibevoice" \
+    "model-00002-of-00010.safetensors" \
+    "VibeVoice Model Part 2/10 (1.74 GB)"
+
+download_model \
+    "https://huggingface.co/aoi-ot/VibeVoice-Large/resolve/main/model-00003-of-00010.safetensors" \
+    "vibevoice" \
+    "model-00003-of-00010.safetensors" \
+    "VibeVoice Model Part 3/10 (1.74 GB)"
+
+download_model \
+    "https://huggingface.co/aoi-ot/VibeVoice-Large/resolve/main/model-00004-of-00010.safetensors" \
+    "vibevoice" \
+    "model-00004-of-00010.safetensors" \
+    "VibeVoice Model Part 4/10 (1.74 GB)"
+
+download_model \
+    "https://huggingface.co/aoi-ot/VibeVoice-Large/resolve/main/model-00005-of-00010.safetensors" \
+    "vibevoice" \
+    "model-00005-of-00010.safetensors" \
+    "VibeVoice Model Part 5/10 (1.74 GB)"
+
+download_model \
+    "https://huggingface.co/aoi-ot/VibeVoice-Large/resolve/main/model-00006-of-00010.safetensors" \
+    "vibevoice" \
+    "model-00006-of-00010.safetensors" \
+    "VibeVoice Model Part 6/10 (1.74 GB)"
+
+download_model \
+    "https://huggingface.co/aoi-ot/VibeVoice-Large/resolve/main/model-00007-of-00010.safetensors" \
+    "vibevoice" \
+    "model-00007-of-00010.safetensors" \
+    "VibeVoice Model Part 7/10 (1.74 GB)"
+
+download_model \
+    "https://huggingface.co/aoi-ot/VibeVoice-Large/resolve/main/model-00008-of-00010.safetensors" \
+    "vibevoice" \
+    "model-00008-of-00010.safetensors" \
+    "VibeVoice Model Part 8/10 (1.84 GB)"
+
+download_model \
+    "https://huggingface.co/aoi-ot/VibeVoice-Large/resolve/main/model-00009-of-00010.safetensors" \
+    "vibevoice" \
+    "model-00009-of-00010.safetensors" \
+    "VibeVoice Model Part 9/10 (1.83 GB)"
+
+download_model \
+    "https://huggingface.co/aoi-ot/VibeVoice-Large/resolve/main/model-00010-of-00010.safetensors" \
+    "vibevoice" \
+    "model-00010-of-00010.safetensors" \
+    "VibeVoice Model Part 10/10 (1.57 GB)"
+
 echo ""
 echo -e "${BLUE}================================================${NC}"
 echo -e "${GREEN}✓ All models downloaded successfully!${NC}"
@@ -173,7 +262,8 @@ echo -e "  • CLIP Vision: ${BASE_DIR}/clip_vision/"
 echo -e "  • Wav2Vec2: ${BASE_DIR}/wav2vec2/"
 echo -e "  • Text Encoder: ${BASE_DIR}/clip/"
 echo -e "  • FLUX Text Encoders: ${BASE_DIR}/text_encoders/"
+echo -e "  • VibeVoice: ${BASE_DIR}/vibevoice/"
 echo ""
-echo -e "${GREEN}Total downloaded: ~47.5 GB${NC}"
-echo -e "${YELLOW}You can now use the Infinite Talk and FLUX Workflows in ComfyUI!${NC}"
+echo -e "${GREEN}Total downloaded: ~66.2 GB${NC}"
+echo -e "${YELLOW}You can now use the Infinite Talk, FLUX, and VibeVoice Workflows in ComfyUI!${NC}"
 echo ""

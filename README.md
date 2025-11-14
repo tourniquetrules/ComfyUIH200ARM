@@ -16,13 +16,15 @@ cd ComfyUIH200ARM
 # Uses pre-compiled wheel (ARM64) or compiles from source (x86_64)
 # Takes: 30 seconds (wheel) or 5-10 minutes (compile)
 
-# 3. Download InfiniteTalk models
+# 3. Download models
 ./download-wan-infinitetalk-models.sh
-# Downloads ~25.5GB of models
+# Downloads ~66.2GB of models (InfiniteTalk, FLUX, VibeVoice)
 
-# 4. Install workflow
+# 4. Install InfiniteTalk workflow
 ./install-workflow.sh
 # Places workflow in ComfyUI/user/default/workflows/
+
+# Note: VibeVoice workflow available in ComfyUI Templates-Extensions
 ```
 
 ### Integration with ComfyUI-Easy-Install
@@ -187,8 +189,9 @@ cd ~/ComfyUI-Easy-Install/ComfyUI-Easy-Install
 
 ## 📋 Models Required
 
-Download these models for InfiniteTalk workflow:
+Download these models using the provided script:
 
+### InfiniteTalk Models (~25.5GB)
 | Model | Size | Location |
 |-------|------|----------|
 | wan2.1-i2v-14b-480p-Q4_0.gguf | 9.6GB | `models/diffusion_models/` |
@@ -199,9 +202,24 @@ Download these models for InfiniteTalk workflow:
 | wav2vec2-chinese-base_fp16 | 182MB | `models/wav2vec2/` |
 | umt5-xxl-enc-bf16.safetensors | 11GB | `models/clip/` |
 
-**Total:** ~25.5GB
+### FLUX Models (~22GB)
+| Model | Size | Location |
+|-------|------|----------|
+| clip_l.safetensors | 246MB | `models/text_encoders/` |
+| t5xxl_fp16.safetensors | 9.8GB | `models/text_encoders/` |
+| ae.safetensors (Lumina VAE) | 336MB | `models/vae/` |
+| flux1-krea-dev_fp8_scaled.safetensors | 11.9GB | `models/diffusion_models/` |
+
+### VibeVoice Models (~18.7GB)
+| Model | Size | Location |
+|-------|------|----------|
+| VibeVoice-Large (10 parts) | 18.7GB | `models/vibevoice/` |
+
+**Total:** ~66.2GB
 
 Use the provided script: `./download-wan-infinitetalk-models.sh`
+
+**Note:** VibeVoice workflow can be loaded from **ComfyUI Templates-Extensions** menu.
 
 ## 🔍 Troubleshooting
 
