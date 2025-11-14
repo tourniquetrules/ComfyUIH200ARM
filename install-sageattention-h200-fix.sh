@@ -9,8 +9,27 @@
 set -e
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-COMFYUI_BASE="${HOME}/ComfyUI-Easy-Install/ComfyUI-Easy-Install"
+
+# Try to find ComfyUI installation
+if [ -d "${SCRIPT_DIR}/ComfyUI-Easy-Install" ]; then
+    COMFYUI_BASE="${SCRIPT_DIR}/ComfyUI-Easy-Install"
+elif [ -d "${HOME}/ComfyUI-Easy-Install/ComfyUI-Easy-Install" ]; then
+    COMFYUI_BASE="${HOME}/ComfyUI-Easy-Install/ComfyUI-Easy-Install"
+elif [ -d "${HOME}/ComfyUIH200ARM/ComfyUI-Easy-Install" ]; then
+    COMFYUI_BASE="${HOME}/ComfyUIH200ARM/ComfyUI-Easy-Install"
+else
+    echo "Error: Could not find ComfyUI installation"
+    echo "Searched in:"
+    echo "  ${SCRIPT_DIR}/ComfyUI-Easy-Install"
+    echo "  ${HOME}/ComfyUI-Easy-Install/ComfyUI-Easy-Install"
+    echo "  ${HOME}/ComfyUIH200ARM/ComfyUI-Easy-Install"
+    exit 1
+fi
+
 PYTHON="${COMFYUI_BASE}/python_embeded/bin/python"
+
+echo "Found ComfyUI at: ${COMFYUI_BASE}"
+echo ""
 
 echo "=========================================="
 echo "SageAttention H200/Hopper Fix Installer"
